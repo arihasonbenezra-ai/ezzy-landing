@@ -671,6 +671,11 @@
       from{opacity:0;transform:translateY(4px)}
       to{opacity:1;transform:translateY(0)}
     }
+    .cycle-typing-dots{display:inline-flex;gap:4px;padding:12px 14px;background:#FCEAE6;border-radius:12px}
+    .cycle-typing-dots span{width:6px;height:6px;border-radius:50%;background:#F26B5E;animation:cycleBounce 1.2s ease-in-out infinite}
+    .cycle-typing-dots span:nth-child(2){animation-delay:0.15s}
+    .cycle-typing-dots span:nth-child(3){animation-delay:0.3s}
+    @keyframes cycleBounce{0%,60%,100%{transform:translateY(0);opacity:0.4}30%{transform:translateY(-4px);opacity:1}}
     /* Conversation cycle */
     .chat-card.fading .chat-body{opacity:0;transition:opacity 0.4s ease}
     .chat-body{transition:opacity 0.4s ease}
@@ -824,16 +829,43 @@
   var idx = 0;
 
   function render(convo){
-    var html = '';
-    convo.forEach(function(m, i){
-      var delay = (i * 600) + 'ms';
+    body.innerHTML = '';
+    var timeline = [];
+    var t = 0;
+    convo.forEach(function(m){
       if(m.role === 'user'){
-        html += '<div class="msg msg--user msg--cycle" style="animation-delay:' + delay + '">' + escapeHtml(m.text) + '</div>';
+        timeline.push({type:'user', text:m.text, at:t});
+        t += 1400;
       } else {
-        html += '<div class="scout-row msg--cycle" style="animation-delay:' + delay + '">' + EZZY_E + '<div class="scout-block"><div class="scout-reply">' + escapeHtml(m.text) + '</div></div></div>';
+        timeline.push({type:'typing', at:t});
+        t += 1200;
+        timeline.push({type:'bot', text:m.text, at:t});
+        t += 2200;
       }
     });
-    body.innerHTML = html;
+    timeline.forEach(function(step){
+      setTimeout(function(){
+        if(step.type === 'user'){
+          var el = document.createElement('div');
+          el.className = 'msg msg--user msg--cycle';
+          el.textContent = step.text;
+          body.appendChild(el);
+        } else if(step.type === 'typing'){
+          var typingEl = document.createElement('div');
+          typingEl.className = 'scout-row msg--cycle';
+          typingEl.id = 'cycle-typing';
+          typingEl.innerHTML = EZZY_E + '<div class="scout-block"><div class="cycle-typing-dots"><span></span><span></span><span></span></div></div>';
+          body.appendChild(typingEl);
+        } else if(step.type === 'bot'){
+          var existing = document.getElementById('cycle-typing');
+          if(existing) existing.remove();
+          var botEl = document.createElement('div');
+          botEl.className = 'scout-row msg--cycle';
+          botEl.innerHTML = EZZY_E + '<div class="scout-block"><div class="scout-reply">' + escapeHtml(step.text) + '</div></div>';
+          body.appendChild(botEl);
+        }
+      }, step.at);
+    });
   }
 
   function escapeHtml(s){
@@ -850,7 +882,7 @@
   }
 
   render(conversations[0]);
-  setInterval(tick, 6500);
+  setInterval(tick, 9000);
 })();
 </script>
 </body>
