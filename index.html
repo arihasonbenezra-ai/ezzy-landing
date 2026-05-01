@@ -840,7 +840,7 @@
         timeline.push({type:'typing', at:t});
         t += 1200;
         timeline.push({type:'bot', text:m.text, at:t});
-        t += 2200;
+        t += 3500;
       }
     });
     timeline.forEach(function(step){
@@ -882,7 +882,7 @@
   }
 
   render(conversations[0]);
-  setInterval(tick, 9000);
+  setInterval(tick, 11000);
 })();
 </script>
 </body>
