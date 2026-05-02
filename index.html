@@ -693,7 +693,7 @@
       <nav class="nav-links" aria-label="Primary">
         <!-- <a href="#about">About</a> -->
         
-        <a class="btn-nav" href="https://app.meetezzy.com" target="_blank" rel="noopener noreferrer">Try Ezzy →</a>
+        <a class="btn-nav" href="#" onclick="event.preventDefault();showSignupModal();">Sign Up</a>
       </nav>
     </div>
   </header>
@@ -784,7 +784,7 @@
     <section class="built">
       <h2>Show up your best, every time.</h2>
       <p>Whether you're prepping for an interview, navigating a pivot, or aiming for what's next, Ezzy helps you bring your A-game.</p>
-      <a class="btn-primary" href="https://app.meetezzy.com" target="_blank" rel="noopener noreferrer">Try Ezzy →</a>
+      <p class="newsletter-coming">Newsletter coming soon</p>
     </section>
   </main>
 
@@ -887,5 +887,5 @@
   setInterval(tick, 11000);
 })();
 </script>
-</body>
+<div id="signupModal" class="signup-modal" onclick="if(event.target===this) hideSignupModal();"><div class="signup-modal-card"><button class="signup-modal-close" onclick="hideSignupModal();">×</button><h3>Sign up coming soon</h3><p>Full launch slated for October 2026.</p><button class="signup-modal-ok" onclick="hideSignupModal();">Got it</button></div></div><script>function showSignupModal(){document.getElementById("signupModal").classList.add("active");}function hideSignupModal(){document.getElementById("signupModal").classList.remove("active");}</script></body>
 </html>
