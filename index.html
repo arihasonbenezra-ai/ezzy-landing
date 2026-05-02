@@ -681,7 +681,16 @@
     /* Conversation cycle */
     .chat-card.fading .chat-body{opacity:0;transition:opacity 0.4s ease}
     .chat-body{transition:opacity 0.4s ease}
-  </style>
+  .signup-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:100;align-items:center;justify-content:center;padding:24px}
+.signup-modal.active{display:flex}
+.signup-modal-card{background:#0D0D0D;border:0.5px solid #2A2020;border-radius:16px;padding:36px 32px 28px;max-width:420px;width:100%;text-align:center;position:relative}
+.signup-modal-card h3{color:#F0EDE8;font-size:22px;margin:0 0 12px;font-weight:600}
+.signup-modal-card p{color:#A8A29E;font-size:15px;margin:0 0 24px;line-height:1.5}
+.signup-modal-close{position:absolute;top:12px;right:14px;background:none;border:none;color:#A8A29E;font-size:28px;cursor:pointer;line-height:1}
+.signup-modal-close:hover{color:#F0EDE8}
+.signup-modal-ok{background:#8B1A1A;color:#F0EDE8;border:none;border-radius:8px;padding:10px 24px;font-size:14px;font-weight:500;cursor:pointer}
+.signup-modal-ok:hover{background:#A82020}
+</style>
 </head>
 <body>
   <header class="nav">
