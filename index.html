@@ -693,6 +693,44 @@
 .signup-modal-ok:hover{background:#F0EDE8;color:#0D0D0D}
 .built p.newsletter-coming{color:#000;font-size:20px;font-weight:600;margin:0;letter-spacing:-0.01em;max-width:none}
 .footer-coming{color:#F0EDE8;font-size:14px;margin:0;letter-spacing:0.02em;font-weight:500}
+
+/* THE PROBLEM (new section) */
+.problem { padding: 80px 40px; background: var(--tint); }
+.problem h2 { font-size: 52px; line-height: 1.05; color: var(--text); margin-bottom: 16px; text-align: center; }
+.problem .lead { text-align: center; font-size: 16px; color: var(--muted); max-width: 560px; margin: 0 auto 56px; line-height: 1.6; }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 960px; margin: 0 auto; }
+.problem-col { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid var(--border); }
+.problem-col.good { border-color: var(--accent); border-width: 2px; }
+.problem-col h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 18px; }
+.problem-col.good h3 { color: var(--accent); }
+.tab-list { list-style: none; padding: 0; margin: 0; }
+.tab-list li { padding: 9px 12px; margin-bottom: 6px; background: #F8F8F8; border-radius: 8px; font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 10px; }
+.tab-list li::before { content: ''; width: 7px; height: 7px; background: var(--muted); border-radius: 50%; flex-shrink: 0; }
+.problem-col.good .tab-list li { background: var(--tint); font-weight: 500; }
+.problem-col.good .tab-list li::before { background: var(--accent); }
+.problem-stat { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); line-height: 1.5; }
+.problem-stat strong { color: var(--text); font-weight: 700; }
+.problem-takeaway { text-align: center; margin-top: 48px; font-size: 17px; color: var(--text); max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+.problem-takeaway strong { color: var(--accent); font-weight: 700; }
+
+/* WHY I BUILT IT (new section) */
+.why { padding: 96px 40px; background: #fff; border-top: 1px solid var(--border); }
+.why-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.why .eyebrow-green { text-align: center; margin-bottom: 16px; }
+.why h2 { font-size: 44px; line-height: 1.1; color: var(--text); margin-bottom: 32px; letter-spacing: 0.01em; text-wrap: balance; text-wrap: pretty; }
+.why h2 em { color: var(--accent); font-style: normal; }
+.why p { font-size: 16px; color: var(--text); line-height: 1.7; margin-bottom: 18px; text-align: left; }
+.why-attribution { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: center; gap: 14px; }
+.why-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--tint); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; }
+.why-attribution-text { text-align: left; }
+.why-name { font-weight: 700; color: var(--text); font-size: 14px; }
+.why-role { color: var(--muted); font-size: 12px; }
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .problem-grid { grid-template-columns: 1fr; }
+  .problem h2, .why h2 { font-size: 36px; }
+}
 </style>
 </head>
 <body>
@@ -717,9 +755,9 @@
           <span class="dot" aria-hidden="true"></span>
           AI INTERVIEW COACH
         </div>
-        <h1 class="display">Practice. Polish.<br>Land the role.</h1>
+        <h1 class="display">Everything you need.<br>One coach.</h1>
         <p class="hero-sub">
-          Ezzy is your AI interview coach. Practice questions, structure your answers, run full mock interviews, and get tailored feedback on your resume. Built by a recruiter who has seen what real prep looks like.
+          Stop juggling ChatGPT, Glassdoor, and a dozen browser tabs. Practice questions, structure answers, run mock interviews, and sharpen your resume. All in one place.
         </p>
         <div class="hero-ctas">
           <a class="btn-primary" href="https://app.meetezzy.com" target="_blank" rel="noopener noreferrer">Try Ezzy →</a>
@@ -737,59 +775,55 @@
       </div>
     </section>
 
-    <section class="features" id="features">
-      <div class="section-inner">
-        <p class="eyebrow-green">WHAT EZZY DOES</p>
-        <h2 class="display">Four ways to prep. One coach.</h2>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Practice Q&amp;A</h3>
-            <p>Answer real interview questions, one at a time. Get structured feedback on every response. Build readiness through reps.</p>
-          </article>
-          <article class="feature-card">
-            <h3>STAR Coaching</h3>
-            <p>Structure behavioral answers using Situation, Task, Action, Result. Ezzy flags what is strong, what is missing, and how to sharpen it.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Mock Interview</h3>
-            <p>Run a full simulated interview tailored to your target role. End with a debrief, top strengths, areas to improve, and a readiness rating.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Resume Feedback</h3>
-            <p>Paste your resume and target job description. Get the top five highest-impact changes ranked by impact, with quoted lines and suggested rewrites. Download the feedback as a PDF.</p>
-          </article>
+    <section class="problem">
+      <p class="eyebrow-green" style="text-align: center;">THE PROBLEM</p>
+      <h2 class="display">Prep is already hard.<br>The tools shouldn't be.</h2>
+      <p class="lead">Most candidates piece prep together across 8+ tools. Nothing remembers what they did yesterday. Hours of context-switching before a single answer gets sharper.</p>
+
+      <div class="problem-grid">
+        <div class="problem-col">
+          <h3>Without Ezzy</h3>
+          <ul class="tab-list">
+            <li>ChatGPT for generic prep prompts</li>
+            <li>Glassdoor for sample interview reports</li>
+            <li>Levels.fyi for comp research</li>
+            <li>LinkedIn for recruiter and team lookup</li>
+            <li>Google Docs for answer drafts</li>
+            <li>YouTube for STAR method tutorials</li>
+            <li>Resume builder for tailoring</li>
+            <li>Notes app for talking points</li>
+          </ul>
+          <p class="problem-stat"><strong>8+ tools.</strong> Hours of context-switching. Nothing remembers what you did yesterday.</p>
+        </div>
+
+        <div class="problem-col good">
+          <h3>With Ezzy</h3>
+          <ul class="tab-list">
+            <li>Pick your role and prep mode</li>
+            <li>Drop your resume, get tailored feedback</li>
+            <li>Practice questions with structured coaching</li>
+            <li>Run a full mock interview</li>
+            <li>Pick up where you left off, every time</li>
+          </ul>
+          <p class="problem-stat"><strong>One coach.</strong> Built for the prep, not the prompt-crafting. Remembers your sessions.</p>
         </div>
       </div>
+
+      <p class="problem-takeaway">You could piece it all together yourself. <strong>Or you could just open Ezzy and start prepping.</strong></p>
     </section>
 
-    <section class="how">
-      <div class="section-inner">
-        <h2 class="display">Start a conversation. Get results.</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <p>Pick your role</p>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <p>Choose your prep mode</p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <p>Start the session</p>
-          </div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <p>Get instant coaching</p>
-          </div>
-        </div>
+    <section class="why">
+      <div class="why-inner">
+        <p class="eyebrow-green">WHY EZZY EXISTS</p>
+        <h2 class="display">Qualified people fail interviews<br><em>Because prep is broken.</em></h2>
+        <p>Ezzy's founder has watched thousands of interviews go sideways. Brilliant candidates underperforming in conversations they were absolutely qualified to win. Not because they couldn't do the job, but because they ran out of time to prep, drowned in tabs, or never got real feedback on their answers.</p>
+        <p>Generic AI tools won't fix this. Static review sites won't either. Ezzy is what every candidate should have: one place that knows your resume, your role, and your last session, and coaches you accordingly.</p>
       </div>
     </section>
 
     
     <section class="built">
       <h2>Show up your best, every time.</h2>
-      <p>Whether you're prepping for an interview, navigating a pivot, or aiming for what's next, Ezzy helps you bring your A-game.</p>
       <p class="newsletter-coming">Newsletter coming soon</p>
     </section>
   </main>
@@ -893,5 +927,5 @@
   setInterval(tick, 11000);
 })();
 </script>
-<div id="signupModal" class="signup-modal" onclick="if(event.target===this) hideSignupModal();"><div class="signup-modal-card"><button class="signup-modal-close" onclick="hideSignupModal();">×</button><div class="signup-modal-face"><svg viewBox="0 0 32 32" width="64" height="64" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" fill="#F26B5E"/><circle cx="11" cy="14" r="1.8" fill="#000"/><circle cx="21" cy="15" r="1.8" fill="#000"/><path d="M 12.5 21 Q 16 23.8 19.5 21" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Ezzy is getting ready</h3><p>Full launch slated for October 2026.</p><button class="signup-modal-ok" onclick="hideSignupModal();">Got it</button></div></div><script>function showSignupModal(){document.getElementById("signupModal").classList.add("active");}function hideSignupModal(){document.getElementById("signupModal").classList.remove("active");}</script></body>
+<div id="signupModal" class="signup-modal" onclick="if(event.target===this) hideSignupModal();"><div class="signup-modal-card"><button class="signup-modal-close" onclick="hideSignupModal();">×</button><div class="signup-modal-face"><svg viewBox="0 0 32 32" width="64" height="64" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" fill="#F26B5E"/><circle cx="11" cy="14" r="1.8" fill="#000"/><circle cx="21" cy="15" r="1.8" fill="#000"/><path d="M 12.5 21 Q 16 23.8 19.5 21" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>Ezzy is prepping</h3><p>Full launch slated for October 2026.</p><button class="signup-modal-ok" onclick="hideSignupModal();">Got it</button></div></div><script>function showSignupModal(){document.getElementById("signupModal").classList.add("active");}function hideSignupModal(){document.getElementById("signupModal").classList.remove("active");}</script></body>
 </html>
