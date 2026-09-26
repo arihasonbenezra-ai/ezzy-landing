@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Ezzy. Your AI Interview Coach.</title>
+<title>Ezzy. Your AI Career Coach.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -720,9 +720,39 @@
 .why-role { color: var(--muted); font-size: 12px; }
 
 /* MOBILE */
+/* How it works */
+.how { padding: 96px 40px; background: #fff; border-top: 1px solid var(--border); }
+.how h2 { font-size: 52px; line-height: 1.05; color: var(--text); text-align: center; margin-bottom: 48px; }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1040px; margin: 0 auto; }
+.how-step { position: relative; background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px 26px 26px; }
+.how-num { display: block; font-size: 44px; line-height: 1; color: var(--accent); margin-bottom: 14px; }
+.how-step h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.how-step h3 .soon-tag { margin-left: 0; }
+.how-step p { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+.how-note { text-align: center; max-width: 620px; margin: 40px auto 0; font-size: 16px; color: var(--text); line-height: 1.6; }
+/* Plans */
+.plans { padding: 96px 40px; background: var(--tint); }
+.plans h2 { font-size: 52px; line-height: 1.05; color: var(--text); text-align: center; margin-bottom: 48px; }
+.plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; align-items: stretch; }
+.plan { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
+.plan--career { border-color: var(--accent); border-width: 2px; }
+.plan-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.plan-head h3 { font-size: 22px; font-weight: 700; color: var(--text); margin: 0; }
+.plan-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 5px; padding: 3px 7px; white-space: nowrap; }
+.plan-tag.now { color: #1E6B34; background: #E8F4EC; border: 1px solid #1E6B34; }
+.plan-tag.soon { color: var(--accent); background: #fff; border: 1px solid var(--accent); }
+.plan-for { font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0 0 18px; }
+.plan .tab-list { margin-bottom: 22px; }
+.plan .tab-list li { background: #F8F8F8; }
+.plan--career .tab-list li { background: var(--tint); }
+.plan--career .tab-list li::before { background: var(--accent); }
+.plan .btn-primary { margin-top: auto; align-self: flex-start; }
+.plan-foot { margin-top: auto; font-size: 13px; color: var(--muted); }
+.built p { margin-bottom: 20px; }
 @media (max-width: 760px) {
-  .problem-grid { grid-template-columns: 1fr; }
-  .problem h2, .why h2 { font-size: 36px; }
+  .problem-grid, .how-grid, .plans-grid { grid-template-columns: 1fr; }
+  .problem h2, .why h2, .how h2, .plans h2 { font-size: 36px; }
+  .how, .plans { padding: 64px 20px; }
 }
 </style>
 </head>
@@ -745,7 +775,7 @@
       <div class="hero-left">
         <h1 class="display">Meet your AI<br>career coach.</h1>
         <p class="hero-sub">
-          Stop juggling ChatGPT, Glassdoor, and a dozen browser tabs — Ezzy brings it all into one place. Practice questions, structure answers, run mock interviews, and sharpen your resume.
+          Ezzy learns your career from your resume, shows you the roles you'd actually win, including the ones you'd never think to search for, and gets you ready for those interviews. Built by a recruiter.
         </p>
         <div class="hero-ctas">
           <a class="btn-primary" href="https://app.meetezzy.com" target="_blank" rel="noopener noreferrer">Try Ezzy →</a>
@@ -756,7 +786,7 @@
         
         <div class="chat-float">
           <div class="chat-card">
-            <div class="chat-header"><span class="ezzy-header-face" aria-hidden="true"><svg viewBox="0 0 32 32" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" fill="#F26B5E"/><circle cx="11" cy="14" r="1.6" fill="#000"><animate attributeName="opacity" values="1;1;1;0;0;1;1" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></circle><path d="M 9.4 14 Q 11 12.7 12.6 14" fill="none" stroke="#000" stroke-width="1.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;0;1;1;0;0" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></path><circle cx="21" cy="15" r="1.6" fill="#000"><animate attributeName="opacity" values="1;1;1;0;0;1;1" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></circle><path d="M 19.4 15 Q 21 13.7 22.6 15" fill="none" stroke="#000" stroke-width="1.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;0;1;1;0;0" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></path><path d="M 12.5 21 Q 16 23.5 19.5 21" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" opacity="1"><animate attributeName="opacity" values="1;1;1;0.3;0.3;1;1" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></path></svg></span><span style="font-weight:600;font-size:15px">Ezzy.</span><span style="color:#666;margin:0 4px">·</span><span id="preview-mode-label" style="color:#666;font-size:13px">Practice Q&amp;A</span></div>
+            <div class="chat-header"><span class="ezzy-header-face" aria-hidden="true"><svg viewBox="0 0 32 32" width="22" height="22" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="14" fill="#F26B5E"/><circle cx="11" cy="14" r="1.6" fill="#000"><animate attributeName="opacity" values="1;1;1;0;0;1;1" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></circle><path d="M 9.4 14 Q 11 12.7 12.6 14" fill="none" stroke="#000" stroke-width="1.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;0;1;1;0;0" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></path><circle cx="21" cy="15" r="1.6" fill="#000"><animate attributeName="opacity" values="1;1;1;0;0;1;1" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></circle><path d="M 19.4 15 Q 21 13.7 22.6 15" fill="none" stroke="#000" stroke-width="1.4" stroke-linecap="round" opacity="0"><animate attributeName="opacity" values="0;0;0;1;1;0;0" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></path><path d="M 12.5 21 Q 16 23.5 19.5 21" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" opacity="1"><animate attributeName="opacity" values="1;1;1;0.3;0.3;1;1" keyTimes="0;0.7;0.78;0.82;0.86;0.92;1" dur="4s" repeatCount="indefinite"/></path></svg></span><span style="font-weight:600;font-size:15px">Ezzy.</span><span style="color:#666;margin:0 4px">·</span><span id="preview-mode-label" style="color:#666;font-size:13px">My Career</span></div>
             <div class="chat-body" id="chat-body"></div>
           </div>
         </div>
@@ -765,54 +795,110 @@
 
     <section class="problem">
       <p class="eyebrow-green" style="text-align: center;">THE PROBLEM</p>
-      <h2 class="display">Prep is already hard.<br>The tools shouldn't be.</h2>
-      <p class="lead">Most candidates piece prep together across 7+ tools. Nothing remembers what they did yesterday. Hours of context-switching before a single answer gets sharper.</p>
+      <h2 class="display">You search by title.<br>The right roles don't.</h2>
+      <p class="lead">Most people job-hunt by typing the title they already have. The roles they'd win under a different name never show up. And nothing they use remembers them from one week to the next.</p>
 
       <div class="problem-grid">
         <div class="problem-col">
           <h3>Without Ezzy</h3>
           <ul class="tab-list">
-            <li>ChatGPT for generic prep prompts</li>
-            <li>Glassdoor for sample interview reports</li>
-            <li>Levels.fyi for comp research</li>
-            <li>Google for company research</li>
+            <li>Job boards that only match your current title</li>
+            <li>ChatGPT that forgets you between sessions</li>
+            <li>Glassdoor for what to expect</li>
             <li>Google Docs for answer drafts</li>
             <li>YouTube for STAR method tutorials</li>
-            <li>Resume builder for tailoring</li>
+            <li>A resume builder for tailoring</li>
+            <li>A spreadsheet to track it all</li>
           </ul>
-          <p class="problem-stat"><strong>7+ tools.</strong> Hours of context-switching. Nothing remembers what you did yesterday.</p>
+          <p class="problem-stat"><strong>7+ tools.</strong> None of them know you. Nothing remembers what you did yesterday.</p>
         </div>
 
         <div class="problem-col good">
           <h3>With Ezzy</h3>
           <ul class="tab-list">
-            <li>Pick your role and prep mode</li>
-            <li>Drop your resume, get tailored feedback</li>
-            <li>Research the company so you walk in informed</li>
-            <li>Practice questions with structured coaching</li>
-            <li>Run a full mock interview</li>
-            <li>Get the comp data that matters <span class="soon-tag">Coming soon</span></li>
+            <li>Tell Ezzy about your career once</li>
+            <li>See the roles you fit, and why <span class="soon-tag">Coming soon</span></li>
+            <li>Find roles you'd never have searched for <span class="soon-tag">Coming soon</span></li>
+            <li>Sharpen your resume against the posting</li>
+            <li>Practice, then run a full mock interview</li>
+            <li>Research the company before you walk in</li>
             <li>Pick up where you left off, every time</li>
           </ul>
-          <p class="problem-stat"><strong>One coach.</strong> Built for the prep, not the prompt-crafting. Remembers your sessions.</p>
+          <p class="problem-stat"><strong>One coach.</strong> Knows your resume, your target, and your last session.</p>
         </div>
       </div>
 
-      <p class="problem-takeaway">You could piece it all together yourself. <strong>Or you could just open Ezzy and start prepping.</strong></p>
+      <p class="problem-takeaway">You could piece it all together yourself. <strong>Or you could open Ezzy and let it get to know you.</strong></p>
+    </section>
+
+    <section class="how" id="how">
+      <p class="eyebrow-green" style="text-align:center;">HOW IT WORKS</p>
+      <h2 class="display">Three steps. One coach.</h2>
+      <div class="how-grid">
+        <div class="how-step">
+          <span class="how-num display">1</span>
+          <h3>Tell Ezzy about your career</h3>
+          <p>Drop your resume. Ezzy builds a profile of what you've actually done, the evidence behind it, and where you want to go next. Every line is yours to edit.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num display">2</span>
+          <h3>See where you fit <span class="soon-tag">Coming soon</span></h3>
+          <p>Roles scored against your profile, not your last title. Including the ones a recruiter would put you up for that you'd never have searched, with the reason why, and what would improve your odds.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num display">3</span>
+          <h3>Get ready for those interviews</h3>
+          <p>Resume review against the posting. Practice questions, STAR coaching, a full mock interview, and company research, all with your profile and target already in the room.</p>
+        </div>
+      </div>
+      <p class="how-note">Know exactly what you want? Type it and skip to step two. No idea what's next? Ezzy talks it through with you until there's a target worth chasing.</p>
+    </section>
+
+    <section class="plans" id="plans">
+      <p class="eyebrow-green" style="text-align:center;">TWO WAYS IN</p>
+      <h2 class="display">Start with what you need today.</h2>
+      <div class="plans-grid">
+        <div class="plan">
+          <div class="plan-head"><h3>Job Search</h3><span class="plan-tag now">Available now</span></div>
+          <p class="plan-for">For people with a posting in hand or an interview on the calendar.</p>
+          <ul class="tab-list">
+            <li>Resume review with a gap analysis against the job</li>
+            <li>Practice Q&amp;A and STAR coaching</li>
+            <li>Full mock interviews</li>
+            <li>Company research before you walk in</li>
+          </ul>
+          <a class="btn-primary" href="https://app.meetezzy.com" target="_blank" rel="noopener noreferrer">Try Ezzy →</a>
+        </div>
+        <div class="plan plan--career">
+          <div class="plan-head"><h3>Career</h3><span class="plan-tag soon">Coming soon</span></div>
+          <p class="plan-for">For people figuring out the next move, whether they know what it is or not.</p>
+          <ul class="tab-list">
+            <li>Everything in Job Search</li>
+            <li>A career profile Ezzy remembers and builds on</li>
+            <li>Roles you fit, scored, with the reason why</li>
+            <li>Roles you'd never have searched for, and how to get them</li>
+            <li>Track the ones you're chasing, then prep for each</li>
+          </ul>
+          <p class="plan-foot">Start free today. Your profile carries over.</p>
+        </div>
+      </div>
     </section>
 
     <section class="why">
       <div class="why-inner">
         <p class="eyebrow-green">WHY EZZY EXISTS</p>
-        <h2 class="display">Qualified people fail interviews<br><em>Because prep is broken.</em></h2>
-        <p>Ezzy's founder has watched thousands of interviews go sideways. Brilliant candidates underperforming in conversations they were absolutely qualified to win. Not because they couldn't do the job, but because they ran out of time to prep, drowned in tabs, or never got real feedback on their answers.</p>
-        <p>Generic AI tools won't fix this. Static review sites won't either. Ezzy is what every candidate should have: one place that knows your resume, your role, and your last session, and coaches you accordingly.</p>
+        <h2 class="display">Qualified people miss the right roles.<br><em>Then fail the interviews they get.</em></h2>
+        <p>Ezzy's founder is a recruiter who has watched thousands of interviews go sideways. Brilliant candidates underperforming in conversations they were absolutely qualified to win. Not because they couldn't do the job, but because they ran out of time to prep, drowned in tabs, or never got real feedback on their answers.</p>
+        <p>The other half of the job is the part candidates never see: reading a resume for what someone can do, not what their last title said, and putting them up for the role they'd never have applied to. Recruiters do this every day. Almost nobody does it for the candidate.</p>
+        <p>Generic AI tools won't fix either problem. Static review sites won't. Ezzy is what every candidate should have: one coach that knows your career, your target, and your last session, and works both sides of the search for you.</p>
       </div>
     </section>
 
     
     <section class="built">
       <h2>Show up your best, every time.</h2>
+      <p>Start with a resume review or interview prep today. The career profile you build is ready when the rest of Ezzy is.</p>
+      <a class="btn-primary" href="https://app.meetezzy.com" target="_blank" rel="noopener noreferrer">Try Ezzy →</a>
     </section>
   </main>
 
@@ -833,7 +919,14 @@
   </script>
 <script>
 (function(){
+  var modeLabels = ['My Career', 'Practice Q&A', 'Mock Interview', 'Resume Review'];
+  var modeLabelEl = document.getElementById('preview-mode-label');
   var conversations = [
+    [
+      {role:'user', text:'What roles am I actually a fit for?'},
+      {role:'bot',  text:"Three strong fits from your profile. One you probably haven't searched: Product Marketing Manager. Your launch and positioning work is exactly what those postings ask for, under a different title."},
+      {role:'user', text:"I never would have looked at that."}
+    ],
     [
       {role:'user', text:'Can you ask me a behavioral question?'},
       {role:'bot',  text:'Tell me about a time you had to influence someone without authority.'},
@@ -860,6 +953,7 @@
 
   function render(convo){
     body.innerHTML = '';
+    if(modeLabelEl && modeLabels[idx]) modeLabelEl.textContent = modeLabels[idx];
     var timeline = [];
     var t = 0;
     convo.forEach(function(m){
