@@ -775,7 +775,7 @@
       <div class="hero-left">
         <h1 class="display">Meet your AI<br>career coach.</h1>
         <p class="hero-sub">
-          Ezzy learns your career from your resume, shows you the roles you'd actually win, including the ones you'd never think to search for, and gets you ready for those interviews.
+          Ezzy learns your career from your resume, shows you the roles you'd actually win, including the ones you'd never think to search for, and gets you ready for those interviews. Nothing it tells you is made up: every claim traces back to your resume, your answers, or a real source.
         </p>
         <div class="hero-ctas">
           <a class="btn-primary" href="https://app.meetezzy.com" target="_blank" rel="noopener noreferrer">Try Ezzy →</a>
@@ -804,13 +804,14 @@
           <ul class="tab-list">
             <li>Job boards that only match your current title</li>
             <li>ChatGPT that forgets you between sessions</li>
+            <li>AI that invents metrics to make your resume sound better</li>
             <li>Glassdoor for what to expect</li>
             <li>Google Docs for answer drafts</li>
             <li>YouTube for STAR method tutorials</li>
             <li>A resume builder for tailoring</li>
             <li>A spreadsheet to track it all</li>
           </ul>
-          <p class="problem-stat"><strong>7+ tools.</strong> None of them know you. Nothing remembers what you did yesterday.</p>
+          <p class="problem-stat"><strong>8+ tools.</strong> None of them know you. Nothing remembers what you did yesterday.</p>
         </div>
 
         <div class="problem-col good">
@@ -821,10 +822,11 @@
             <li>Find roles you'd never have searched for <span class="soon-tag">Coming soon</span></li>
             <li>Sharpen your resume against the posting</li>
             <li>Practice, then run a full mock interview</li>
-            <li>Research the company before you walk in</li>
+            <li>Get a readiness score computed from your own answers</li>
+            <li>Research the company before you walk in, with real sources</li>
             <li>Pick up where you left off, every time</li>
           </ul>
-          <p class="problem-stat"><strong>One coach.</strong> Knows your resume, your target, and your last session.</p>
+          <p class="problem-stat"><strong>One coach.</strong> Knows your resume, your target, and your last session. Never makes anything up.</p>
         </div>
       </div>
 
@@ -838,7 +840,7 @@
         <div class="how-step">
           <span class="how-num display">1</span>
           <h3>Tell Ezzy about your career</h3>
-          <p>Drop your resume. Ezzy builds a profile of what you've actually done, the evidence behind it, and where you want to go next. Every line is yours to edit.</p>
+          <p>Drop your resume. Ezzy builds a profile of what you've actually done, with the line each item came from, and where you want to go next. It all lives on My Career, and every line is yours to edit or remove.</p>
         </div>
         <div class="how-step">
           <span class="how-num display">2</span>
@@ -848,7 +850,7 @@
         <div class="how-step">
           <span class="how-num display">3</span>
           <h3>Get ready for those interviews</h3>
-          <p>Resume review against the posting. Practice questions, STAR coaching, a full mock interview, and company research, all with your profile and target already in the room.</p>
+          <p>Resume review against the posting. Practice questions, STAR coaching, a full mock interview, and company research, all with your profile and target already in the room. After five answers you get a scorecard, every mark tied to something you said.</p>
         </div>
       </div>
       <p class="how-note">Know exactly what you want? Type it and skip to step two. No idea what's next? Ezzy talks it through with you until there's a target worth chasing.</p>
@@ -864,8 +866,10 @@
           <ul class="tab-list">
             <li>Resume review with a gap analysis against the job</li>
             <li>Practice Q&amp;A and STAR coaching</li>
+            <li>A readiness scorecard after every Practice set</li>
             <li>Full mock interviews</li>
-            <li>Company research before you walk in</li>
+            <li>Company research with real, linked sources</li>
+            <li>Every past session saved with its score</li>
           </ul>
         </div>
         <div class="plan plan--career">
@@ -873,6 +877,7 @@
           <p class="plan-for">For people figuring out the next move, whether they know what it is or not.</p>
           <ul class="tab-list">
             <li>Everything in Job Search</li>
+            <li>My Career: your target, what Ezzy knows, your scores and sessions on one page</li>
             <li>A career profile Ezzy remembers and builds on</li>
             <li>Roles you fit, scored, with the reason why</li>
             <li>Roles you'd never have searched for, and how to get them</li>
@@ -890,6 +895,7 @@
         <p>Ezzy's founder has watched thousands of interviews go sideways. Brilliant candidates underperforming in conversations they were absolutely qualified to win. Not because they couldn't do the job, but because they ran out of time to prep, drowned in tabs, or never got real feedback on their answers.</p>
         <p>The other half of the problem is the part candidates never see: the roles they'd have won under a different title. Hiring teams read a resume for what someone can do, not what their last title said. Almost nobody does that for the candidate.</p>
         <p>Generic AI tools won't fix either problem. Static review sites won't. Ezzy is what every candidate should have: one coach that knows your career, your target, and your last session, and works both sides of the search for you.</p>
+        <p>And it doesn't make things up. Every quote in a resume review is checked against your resume before you see it. Every score is computed from your own answers, dimension by dimension. Company research links to the sources it used, or tells you it couldn't verify something. When Ezzy can't back a claim, it says so instead of guessing.</p>
       </div>
     </section>
 
@@ -916,7 +922,7 @@
   </script>
 <script>
 (function(){
-  var modeLabels = ['My Career', 'Practice Q&A', 'Mock Interview', 'Resume Review'];
+  var modeLabels = ['My Career', 'Practice Q&A', 'Scorecard', 'Mock Interview', 'Resume Review'];
   var modeLabelEl = document.getElementById('preview-mode-label');
   var conversations = [
     [
@@ -930,13 +936,18 @@
       {role:'user', text:'I led a cross-team initiative at my last company...'}
     ],
     [
+      {role:'user', text:'How did that set go?'},
+      {role:'bot',  text:'7.2 out of 10, computed from your five answers. Results was your low mark: two answers had an outcome but no number. Every score is tied to a quote from what you said.'},
+      {role:'user', text:'So I need to say the number next time.'}
+    ],
+    [
       {role:'user', text:'Run a mock interview for a Product Manager role.'},
       {role:'bot',  text:"Absolutely. I'll play the hiring manager. Let's start with introductions, then move into product sense and behavioral questions. Ready?"},
       {role:'user', text:"Yes, let's go."}
     ],
     [
       {role:'user', text:'Can you review my resume against this PM job description?'},
-      {role:'bot',  text:'Got it. Top change: your bullets describe responsibilities, not impact. Try leading with metrics — "Drove 23% activation lift" instead of "Owned activation."'},
+      {role:'bot',  text:'Got it. Top change: your first bullet says "Owned activation for the core product." Two lines down you mention the 23% lift. Lead with that number. I only use figures that are already in your resume.'},
       {role:'user', text:"That's a great catch."}
     ]
   ];
